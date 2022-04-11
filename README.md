@@ -1,3 +1,3 @@
-- Hi, I’m @Av4dot
+- Hi, I’m Avato
 
-A adventurer in the Úsnar infiverse
+A adventurer in the Usnar infiverse, programmer and illustrator.
