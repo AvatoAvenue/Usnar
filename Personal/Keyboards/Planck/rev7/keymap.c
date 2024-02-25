@@ -145,8 +145,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         default:
         rgblight_mode_noeeprom(base_mode);
-        if (!host_keyboard_led_state().caps_lock) { // Verificar si CAPS LOCK está desactivado
-                rgblight_sethsv_noeeprom(HSV_RED); // Establecer el color solo si CAPS LOCK está desactivado
+        if (!host_keyboard_led_state().caps_lock) {
+                rgblight_sethsv_noeeprom(HSV_RED);
             }
         break;
 }
