@@ -17,11 +17,11 @@ There are my personal configurations in different spaces.
   - VSG Quasar RGB
   - Logitech K120
 ## Sensitivity in games
-- 360° distance/cm: 45.5742
-- Ultrakill: 2.508
-- Overwatch 2: 1.9
-- Valorant: 0.179
-- Counter Strike: 0.57
-- Phasmophobia: 0.1254
+- 360° distance/cm: 43.2955
+- Ultrakill: 2.640000
+- Overwatch 2: 2
+- Valorant: 0.189
+- Counter Strike: 0.60
+- Phasmophobia: 0.132
 ## Keyboards Configs
 - 
