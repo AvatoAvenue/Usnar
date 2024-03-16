@@ -24,4 +24,4 @@ There are my personal configurations in different spaces.
 - Counter Strike: 0.60
 - Phasmophobia: 0.132
 ## Keyboards Configs
-- 
+- [Planck V7](Personal/Keyboards/Planck/rev7)
