@@ -1,7 +1,7 @@
 # Avato
 There are my personal configurations in different spaces.
 ## peripherals
-- Mouse model: Razer Viper Mini
+- Mouse model: ninjutso Sora V2
   - DPI: 1600
   - Polling Rate: 1000
 - Keyboard model: [Drop x OLKB Planck V7](Personal/Keyboards/Planck/rev7)
@@ -13,6 +13,7 @@ There are my personal configurations in different spaces.
 ### obsolete peripherals
 - Mouse
   - Ocelot Ogem01
+  - Razer Viper Mini
 - Keyboard
   - VSG Quasar RGB
   - Logitech K120
