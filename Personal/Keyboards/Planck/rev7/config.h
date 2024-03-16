@@ -5,8 +5,8 @@
 
 #define NO_MUSIC_MODE
 
-#define LAYER_STATE_8BIT
-// #define LAYER_STATE_16BIT
+// #define LAYER_STATE_8BIT
+#define LAYER_STATE_16BIT
 
 #define TAPPING_TOGGLE 2
 #define TAPPING_TERM 200
