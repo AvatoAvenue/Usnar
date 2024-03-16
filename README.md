@@ -22,7 +22,7 @@ There are my personal configurations in different spaces.
 - Ultrakill: 2.640000
 - Overwatch 2: 2
 - Valorant: 0.189
-- Counter Strike: 0.60
+- Source games: 0.60
 - Phasmophobia: 0.132
 ## Keyboards Configs
 - [Planck V7](Personal/Keyboards/Planck/rev7)
