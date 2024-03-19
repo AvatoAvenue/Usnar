@@ -23,12 +23,13 @@ There are my personal configurations in different spaces.
 ---
 
 ## Sensitivity in games
-- 360° distance/cm: 43.2955
+- 360° distance/cm: 43.2955 // 17.0455 distance/inch
 - Ultrakill: 2.640000
+- Reaver: 0.0528 //9a08ab3f
 - Overwatch 2: 2
 - Valorant: 0.189
 - Source games: 0.60
-- Phasmophobia: 0.132
+- Phasmophobia: 0.132 //60e5c03f
 
 ## Advanced settings in games
 - [Apex Legends](Personal/Games/Apex_Legends)
