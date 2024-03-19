@@ -17,6 +17,11 @@ There are my personal configurations in different spaces.
 - Keyboard
   - VSG Quasar RGB
   - Logitech K120
+## Keyboards Configs
+- [Planck V7](Personal/Keyboards/Planck/rev7)
+
+---
+
 ## Sensitivity in games
 - 360° distance/cm: 43.2955
 - Ultrakill: 2.640000
@@ -24,5 +29,7 @@ There are my personal configurations in different spaces.
 - Valorant: 0.189
 - Source games: 0.60
 - Phasmophobia: 0.132
-## Keyboards Configs
-- [Planck V7](Personal/Keyboards/Planck/rev7)
+
+## Advanced settings in games
+- [Apex Legends](Personal/Games/Apex_Legends)
+- [Counter Strike - Saga](Personal/Games/Counter_Strike)
