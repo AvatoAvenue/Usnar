@@ -36,6 +36,7 @@ There are my personal configurations in different spaces.
 - Valorant: 0.358 // .3582857
 - Source games: 1.14
 - Phasmophobia: 0.2508 // 1b0dd03f
+- R6: 50 yawsens / 0.001750914 multiplier
 
 ## Advanced settings in games
 - [Apex Legends](Personal/Games/Apex_Legends)
