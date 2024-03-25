@@ -1,0 +1,20 @@
+//Mouse Sens
+RawInputMouseKeyboard=1
+MouseSensitivity=50
+MouseYawSensitivity=50
+MousePitchSensitivity=50
+MouseSensitivityMultiplierUnit=0.000875
+
+//ADS
+AimDownSightsMouse=50
+ADSMouseUseSpecific=1
+ADSMouseSensitivityGlobal=34
+ADSMouseSensitivity1x=34
+ADSMouseSensitivity1xHalf=55
+ADSMouseSensitivity2x=56
+ADSMouseSensitivity2xHalf=56
+ADSMouseSensitivity3x=57
+ADSMouseSensitivity4x=57
+ADSMouseSensitivity5x=57
+ADSMouseSensitivity12x=57
+ADSMouseMultiplierUnit=0.020000
