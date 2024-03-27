@@ -19,6 +19,7 @@ There are my personal configurations in different spaces.
 ### obsolete peripherals
 - Mouse
   - Ocelot Ogem01
+  - Logitech G203 LightSync
   - Razer Viper Mini
 - Keyboard
   - VSG Quasar RGB
