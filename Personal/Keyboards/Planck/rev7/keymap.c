@@ -40,34 +40,42 @@ enum planck_keycodes {
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
-enum {
-    TD_PC,
-    TD_PCA,
-    TD_CAPLOCK
-};
+// rgb usb control
+#ifdef RGBLIGHT_ENABLE
+// suspend rgb
+void suspend_power_down_user(void) {
+    // Apaga las luces RGB
+    rgblight_disable_noeeprom();
+}
+
+//wakeup rgb
+void suspend_wakeup_init_user(void) {
+    rgblight_enable_noeeprom();
+}
+#endif
 
 //LAYERS
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
     [_COLEMAK] = LAYOUT_planck_grid(
-        KC_TAB, KC_Q, KC_W, KC_F, KC_P, KC_B, KC_J, KC_L, KC_U, KC_Y, TD(TD_PC), KC_MINUS,
+        KC_TAB, KC_Q, KC_W, KC_F, KC_P, KC_B, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINUS,
         KC_BSPC, KC_A, KC_R, KC_S, KC_T, KC_G, KC_M, KC_N, KC_E, KC_I, KC_O, KC_ENT,
-        TD(TD_CAPLOCK), KC_Z, KC_X, KC_C, KC_D, KC_V, KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
-        KC_LCTL, KC_LGUI, KC_MEH, KC_LALT, TT(_NUM), KC_SPC, TT(_NAV), TT(_SYM), KC_RALT, KC_MEH, TD(TD_CAPLOCK), TG(_GAME)
+        KC_LSFT, KC_Z, KC_X, KC_C, KC_D, KC_V, KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
+        KC_LCTL, KC_LGUI, KC_MEH, KC_LALT, TT(_NUM), KC_SPC, TT(_NAV),  TT(_SYM), KC_RALT, KC_MEH, KC_CAPS, TG(_GAME)
     ),
 
     [_QWERTY] = LAYOUT_planck_grid(
-        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, TD(TD_PCA), KC_MINUS,
+        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINUS,
         KC_BSPC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_ENT,
-        TD(TD_CAPLOCK), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
-        KC_LCTL, KC_LGUI, KC_MEH, KC_LALT, TT(_NUM), KC_SPC, TT(_NAV), TT(_SYM), KC_RALT, KC_MEH, TD(TD_CAPLOCK), TG(_GAME)
+        KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
+        KC_LCTL, KC_LGUI, KC_MEH, KC_LALT, TT(_NUM), KC_SPC, TT(_NAV),  TT(_SYM), KC_RALT, KC_MEH, KC_CAPS, TG(_GAME)
     ),
 
     [_COLEMAKWND] = LAYOUT_planck_grid(
-        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_B, KC_Y, KC_U, KC_I, KC_O, TD(TD_PCA), KC_MINUS,
+        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_B, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINUS,
         KC_BSPC, KC_A, KC_S, KC_D, KC_F, KC_T, KC_M, KC_J, KC_K, KC_L, KC_SCLN, KC_ENT,
-        TD(TD_CAPLOCK), KC_Z, KC_X, KC_C, KC_G, KC_V, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SLASH, KC_ESC,
-        KC_LCTL, KC_LGUI, KC_MEH, KC_LALT, TT(_NUM), KC_SPC, TT(_NAV), TT(_SYM), KC_RALT, KC_MEH, TD(TD_CAPLOCK), TG(_GAME)
+        KC_LSFT, KC_Z, KC_X, KC_C, KC_G, KC_V, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SLASH, KC_ESC,
+        KC_LCTL, KC_LGUI, KC_MEH, KC_LALT, TT(_NUM), KC_SPC, TT(_NAV),  TT(_SYM), KC_RALT, KC_MEH, KC_CAPS, TG(_GAME)
     ),
 
     [_NUM] = LAYOUT_planck_grid(
@@ -118,13 +126,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, COLEMAKWND, COLEMAK, QWERTY, FUNCZ, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
-};
-
-// Tap Dance definitions
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, LSFT(KC_SCLN)),
-    [TD_PCA] = ACTION_TAP_DANCE_DOUBLE(KC_P, LSFT(KC_P)),
-    [TD_CAPLOCK] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS)
 };
 
 static layer_state_t previous_state = 0;
