@@ -30,7 +30,7 @@ There are my personal configurations in different spaces.
 -----
 
 ** IDEs
--[[Emacs][Personal/doomacs]]
+-[[Emacs][Personal/TextEditors/doomacs]]
 
 -----
 
