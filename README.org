@@ -25,12 +25,12 @@ There are my personal configurations in different spaces.
   - VSG Quasar RGB
   - Logitech K120
 ** Keyboards Configs
-- [[Planck V7][Personal/Keyboards/Planck/rev7]]
+- [[Planck V7][https://github.com/AvatoAvenue/Usnar/tree/main/Personal/Keyboards/Planck/rev7]]
 
 -----
 
 ** IDEs
--[[Emacs][Personal/TextEditors/doomacs]]
+-[[Emacs][https://github.com/AvatoAvenue/Usnar/tree/main/Personal/TextEditors/doomacs]]
 
 -----
 
