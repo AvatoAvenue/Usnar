@@ -36,15 +36,15 @@ There are my personal configurations in different spaces.
 
 ** Sensitivity in games
 - 360° distance/cm: 45.5742 // 17.9426 distance/inch
-- Ultrakill: 5.016000
-- Reaver: 0.10032 // 92aeb93f
-- Overwatch 2: 3.80
-- Valorant: 0.358 // .3582857
-- Source games: 1.14
-- Phasmophobia: 0.2508 // 1b0dd03f
-- R6: 50 yawsens / 0.001750914 multiplier
+- Ultrakill: 4.620000
+- Reaver: 0.0924 // 86a7b73f
+- Overwatch 2: 3.50
+- Valorant: 0.330
+- Source games: 1.050000
+- Phasmophobia: 0.231 // 6891cd3f
+- R6: 50 yawsens / 0.001612685 multiplier
 
 ** Advanced settings in games
-- [Apex Legends](Personal/Games/Apex_Legends)
-- [Counter Strike - Saga](Personal/Games/Counter_Strike)
-- [Valorant](Personal/Games/VALORANT)
+- [[Personal/Games/Apex_Legends][Apex Legends]]
+- [[Personal/Games/Counter_Strike][Counter Strike]]
+- [[Personal/Games/VALORANT][Valorant]]
