@@ -89,16 +89,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     ),
     
     [_NAV] = LAYOUT_planck_grid(
-        _______, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, _______,
+        _______, KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0, _______,
         KC_BSPC, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PSCR, KC_INS, KC_HOME, KC_END, KC_PGUP, KC_PGDN, KC_DEL,
         KC_LSFT, KC_P4, KC_P2, KC_P8, KC_P6, KC_VOLD, KC_VOLU, KC_MPLY, KC_MUTE, KC_MPRV, KC_MNXT, _______,
         KC_LCTL, KC_LGUI, KC_LALT, _______, TT(_NUM), _______, TT(_NAV), TT(_SYM), _______, _______, _______, _______
     ),
     
     [_SYM] = LAYOUT_planck_grid(
-        _______, KC_EXLM, KC_QUES, KC_AT, KC_PERC, KC_SCLN, KC_COLN, KC_QUOT, KC_DQUO, KC_LCBR, KC_RCBR, _______,
+        _______, KC_EXLM, KC_QUES, KC_PERC, KC_AT, KC_DLR, KC_PIPE, KC_QUOT, KC_DQUO, KC_LCBR, KC_RCBR, _______,
         _______, KC_ASTR, KC_MINS, KC_PLUS, KC_EQL, KC_LT, KC_GT, KC_UNDS, KC_HASH, KC_LPRN, KC_RPRN, KC_DEL,
-        _______, KC_GRV, KC_TILD, KC_CIRC, KC_BSLS, KC_DLR, KC_PIPE, KC_SLSH, KC_AMPR, KC_LBRC, KC_RBRC, _______,
+        _______, KC_GRV, KC_TILD, KC_CIRC, KC_BSLS, KC_AMPR, KC_P, KC_SLSH, KC_AMPR, KC_LBRC, KC_RBRC, _______,
         _______, _______, _______, _______, TT(_NUM), _______, TT(_NAV), TT(_SYM), _______, _______, _______, _______
     ),
 
