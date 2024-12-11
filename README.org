@@ -7,7 +7,7 @@ There are my personal configurations in different spaces.
 - Mouse model: ninjutso Sora V2
   - DPI: 1600
   - Polling Rate: 1000
-- Keyboard model: [Drop x OLKB Planck V7](Personal/Keyboards/Planck/rev7)
+- Keyboard model: [[https://drop.com/buy/planck-mechanical-keyboard?defaultSelectionIds=988297][Drop x OLKB Planck V7]]
 - Controller Model: PowerA Green Hint Standard Edition
 - Graphic Tablet Model: Wacom Intuos S
 - Microphone Model: Maono PM461S
@@ -31,6 +31,7 @@ There are my personal configurations in different spaces.
 
 ** text editors
 - [[Personal/TextEditors/doomacs][Emacs]]
+- [[Personal/TextEditors/neovim][Neovim]]
 
 -----
 
