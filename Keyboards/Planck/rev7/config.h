@@ -9,7 +9,7 @@
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TOGGLE 2
-#define TAPPING_TERM 200
+#define TAPPING_TERM 150
 
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(Castle_Vein_ultrakill)
