@@ -25,13 +25,13 @@ There are my personal configurations in different spaces.
   - VSG Quasar RGB
   - Logitech K120
 ** Keyboards Configs
-- [[Personal/Keyboards/Planck/rev7][Planck V7]]
+- [[Keyboards/Planck/rev7][Planck V7]]
 
 -----
 
 ** text editors
-- [[Personal/TextEditors/doomacs][Emacs]]
-- [[Personal/TextEditors/neovim][Neovim]]
+- [[TextEditors/doomacs][Emacs]]
+- [[TextEditors/neovim][Neovim]]
 
 -----
 
@@ -45,6 +45,6 @@ There are my personal configurations in different spaces.
 - R6: 50 yawsens / 0.0008063425 multiplier
 
 ** Advanced settings in games
-- [[Personal/Games/Apex_Legends][Apex Legends]]
-- [[Personal/Games/Counter_Strike][Counter Strike]]
-- [[Personal/Games/VALORANT][Valorant]]
+- [[Games/Apex_Legends][Apex Legends]]
+- [[Games/Counter_Strike][Counter Strike]]
+- [[Games/VALORANT][Valorant]]
