@@ -46,6 +46,8 @@ local config = wezterm.config_builder()
 
 term = "xterm-256color"
 
+max_fps = 144
+
 --color scheme
 config.color_scheme = 'Oxocarbon Dark (Gogh)'
  -- colors = {
