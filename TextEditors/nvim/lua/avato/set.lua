@@ -1,6 +1,8 @@
 --Setting options
 -- ':help vim.opt' | ':help option-list'
 
+vim.o.laststatus = 3
+
 --background
 vim.opt.background = "dark"
 
@@ -34,7 +36,7 @@ vim.opt.breakindent = true
 vim.opt.signcolumn = "yes"
 
 -- case-insensitive search
-vim.port.ignorecase = true
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 --configure how new splits should be opened
@@ -59,7 +61,7 @@ vim.opt.wrap = false
 vim.opt.smartindent = true
 
 -- preview substitutions live
-vim.opt.inccomand = "split"
+vim.opt.inccommand = "split"
 
 -- tab spaces
 vim.opt.tabstop = 4
@@ -67,8 +69,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 -- number of spaces defined in smart index
 vim.opt.shiftwidth = 4
--- tabs to spaces
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 
 -- incremental search
 vim.opt.incsearch = true

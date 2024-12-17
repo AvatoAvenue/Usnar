@@ -6,7 +6,7 @@ There are my personal configurations in different spaces.
 ** peripherals
 - Mouse model: ninjutso Sora V2
   - DPI: 1600
-  - Polling Rate: 1000
+  - Polling Rate: 4000
 - Keyboard model: [[https://drop.com/buy/planck-mechanical-keyboard?defaultSelectionIds=988297][Drop x OLKB Planck V7]]
 - Controller Model: PowerA Green Hint Standard Edition
 - Graphic Tablet Model: Wacom Intuos S
