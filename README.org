@@ -31,7 +31,7 @@ There are my personal configurations in different spaces.
 
 ** text editors
 - [[TextEditors/doomacs][Emacs]]
-- [[TextEditors/neovim][Neovim]]
+- [[TextEditors/nvim][Neovim]]
 
 -----
 
