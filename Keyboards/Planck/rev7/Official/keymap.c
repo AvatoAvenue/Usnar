@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     ),
 
     [_SYM] = LAYOUT_planck_grid(
-        _______, KC_DLR, KC_AMPR, KC_PERC, KC_AT, KC_PIPE, KC_SLSH, KC_QUOT, KC_DQUO, KC_GRV, KCC_Dash, _______,
+        _______, KC_DLR, KC_AMPR, KC_PERC, KC_AT, KC_PIPE, KC_SLSH, KC_QUOT, KC_DQUO, KC_EXLM, KCC_Dash, _______,
         _______, KC_ASTR, KC_MINS, KC_PLUS, KC_EQL, KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_EXLM, KC_QUES, KC_DEL,
         _______, KC_TILD, KC_CIRC, KC_BSLS, KC_HASH, KC_LT, KC_GT, KC_LCBR, KC_RCBR, KCC_InvE, KCC_InvQ, _______,
         _______, _______, _______, _______, TT(_NUM), _______, TT(_NAV), TT(_SYM), _______, _______, _______, _______
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 
     [_FUNCZ] = LAYOUT_planck_grid(
         _______, _______, _______, COLEMAKWND, COLEMAK, _______, _______, COLEMAK, QWERTY, _______, _______, _______,
-        _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_DELETE,
+        _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_L, _______, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_DELETE,
         _______, KC_BTN1, KC_BTN2, KC_BTN3, KC_BTN4, _______, _______, KC_MS_BTN5, KC_MS_BTN6, KC_MS_BTN7, KC_MS_BTN8, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),

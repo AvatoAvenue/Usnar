@@ -10,7 +10,7 @@ vim.opt.background = "dark"
 vim.opt.nu = true
 
 -- Relative numbers
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- enable mouse mode
 vim.opt.mouse = "a"
@@ -44,7 +44,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Minimal number of lines in the screen
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 50
 
 --Display certain whitespace characters in the editor
 --':help «list»' | ':help «listchars»'
@@ -69,7 +69,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 -- number of spaces defined in smart index
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 
 -- incremental search
 vim.opt.incsearch = true

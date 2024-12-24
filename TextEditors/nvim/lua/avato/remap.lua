@@ -44,9 +44,9 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 --replace words downward the cursor
 vim.keymap.set(
-	"n",
-	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
+    "n",
+    "<leader>s",
+    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 )
 
 --exec

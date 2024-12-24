@@ -16,7 +16,11 @@ return {
 
 	config = function()
 		require("conform").setup({
-			formatters_by_ft = {},
+			formatters_by_ft = {
+                lua = { "stylua" },
+                csharp = { "astyle", "csharpier" },
+                rust = { "rustfmt", lsp_format = "fallback"}
+            },
 		})
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
