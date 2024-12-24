@@ -14,11 +14,11 @@ enum planck_layers {
     _COLEMAK,
     _QWERTY,
     _COLEMAKDH,
-    _FUNCZ,
     _NAV,
     _NUM,
     _SYM,
-    _GAME
+    _GAME,
+    _ADJUST
 };
 
 enum planck_keycodes {
@@ -28,12 +28,10 @@ enum planck_keycodes {
     GAME,
     NAV,
     SYM,
-    NUM,
-    FUNCZ,
+    ADJUST,
     KCC_InvQ,
     KCC_InvE,
-    KCC_Dash,
-    KCC_Distr
+    KCC_Dash
 };
 
 // Clear layering
@@ -63,43 +61,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     [_COLEMAK] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_E, KC_R, KC_B, TG(_GAME), TG(_GAME), KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_T, XXXXXXX, XXXXXXX, KC_M, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, KC_X, KC_C, KC_G, KC_V, XXXXXXX, XXXXXXX, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SCLN,
-        KC_DELETE, XXXXXXX, XXXXXXX, TT(_NUM), KC_SPACE, KC_LSFT, TT(_NAV), KC_BSPC, TT(_SYM), XXXXXXX, XXXXXXX, KC_ENT
+        KC_Z, KC_X, KC_C, KC_G, KC_V, XXXXXXX, XXXXXXX, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
+        XXXXXXX, XXXXXXX, KC_ESC, TT(_NUM), KC_BSPC, KC_SPACE, KC_LSFT, TT(_NAV), TT(_SYM), KC_ENT, XXXXXXX, XXXXXXX
     ),
     
     [_QWERTY] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_E, KC_R, KC_T, TG(_GAME), TG(_GAME), KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_G, XXXXXXX, XXXXXXX, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SCLN,
-        KC_DELETE, XXXXXXX, XXXXXXX, TT(_NUM), KC_SPACE, KC_LSFT, TT(_NAV), KC_BSPC, TT(_SYM), XXXXXXX, XXXXXXX, KC_ENT
+        KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLSH,
+        XXXXXXX, XXXXXXX, KC_ESC, TT(_NUM), KC_BSPC, KC_SPACE, KC_LSFT, TT(_NAV), TT(_SYM), KC_ENT, XXXXXXX, XXXXXXX
     ),
     
     [_COLEMAKDH] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_F, KC_P, KC_B, TG(_GAME), TG(_GAME), KC_J, KC_L, KC_U, KC_Y, KC_SCLN,
         KC_A, KC_R, KC_S, KC_T, KC_G, XXXXXXX, XXXXXXX, KC_M, KC_N, KC_E, KC_I, KC_O,
-        KC_Z, KC_X, KC_C, KC_D, KC_V, XXXXXXX, XXXXXXX, KC_K, KC_H, KC_COMMA, KC_DOT, KC_SCLN,
-        KC_DELETE, XXXXXXX, XXXXXXX, TT(_NUM), KC_SPACE, KC_LSFT, TT(_NAV), KC_BSPC, TT(_SYM), XXXXXXX, XXXXXXX, KC_ENT
+        KC_Z, KC_X, KC_C, KC_D, KC_V, XXXXXXX, XXXXXXX, KC_K, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
+        XXXXXXX, XXXXXXX, KC_ESC, TT(_NUM), KC_BSPC, KC_SPACE, KC_LSFT, TT(_NAV), TT(_SYM), KC_ENT, XXXXXXX, XXXXXXX
     ),
 
     [_NUM] = LAYOUT_planck_grid(
         KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, XXXXXXX, XXXXXXX, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
         KC_0, KC_1, KC_2, KC_3, KC_4, XXXXXXX, XXXXXXX, KC_5, KC_6, KC_7, KC_8, KC_9,
         KC_MPRV, KC_MNXT, KC_MUTE, KC_MPLY, KC_MPLY, XXXXXXX, XXXXXXX, KC_NUM, KC_CAPS, _______, _______, _______,
-        _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, _______
+        XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
 
     [_NAV] = LAYOUT_planck_grid(
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, XXXXXXX, XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-        KC_HOME, KC_PGUP, KC_PGDN, KC_END, KC_F11, XXXXXXX, XXXXXXX, KC_F12, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
-        KC_LCTL, KC_LGUI, KC_LALT, KC_MEH, KC_RALT, XXXXXXX, XXXXXXX, KC_RALT, KC_MEH, KC_LALT, KC_LGUI, KC_LCTL,
-        KC_ESC, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, KC_TAB
+        KC_HOME, KC_PGUP, KC_PGDN, KC_END, KC_TAB, XXXXXXX, XXXXXXX, KC_ENT, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
+        KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, KC_MEH, XXXXXXX, XXXXXXX, KC_MEH, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
+        XXXXXXX, XXXXXXX, KC_F11, _______, _______, _______, _______, _______, _______, KC_F12, XXXXXXX, XXXXXXX
     ),
 
     [_SYM] = LAYOUT_planck_grid(
         KC_DLR, KC_AMPR, KC_PERC, KC_AT, KC_PIPE, XXXXXXX, XXXXXXX, KC_SLSH, KC_QUOT, KC_DQUO, KC_GRV, KCC_Dash,
         KC_ASTR, KC_MINS, KC_PLUS, KC_EQL, KC_LBRC, XXXXXXX, XXXXXXX, KC_RBRC, KC_LPRN, KC_RPRN, KC_EXLM, KC_QUES,
         KC_TILD, KC_CIRC, KC_BSLS, KC_HASH, KC_LT, XXXXXXX, XXXXXXX, KC_GT, KC_LCBR, KC_RCBR, KCC_InvE, KCC_InvQ,
-        _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, _______
+        XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
 
     [_GAME] = LAYOUT_planck_grid(
@@ -109,11 +107,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_SPACE, KC_B, KC_N, KC_M, KC_COMMA, KC_DOT, TG(_GAME)
     ),
 
-    [_FUNCZ] = LAYOUT_planck_grid(
+    [_ADJUST] = LAYOUT_planck_grid(
         _______, _______, _______, _______, KC_PWR, XXXXXXX, XXXXXXX, QK_BOOT, _______, _______, _______, _______,
         KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, COLEMAKDH, XXXXXXX, XXXXXXX, COLEMAK, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_L,
-        KC_BTN4, KC_BTN3, KC_BTN2, KC_BTN1, FUNCZ, XXXXXXX, XXXXXXX, QWERTY, KC_MS_BTN5, KC_MS_BTN6, KC_MS_BTN7, KC_MS_BTN8,
-        _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, _______
+        KC_BTN4, KC_BTN3, KC_BTN2, KC_BTN1, TG(_ADJUST), _______, _______, QWERTY, KC_MS_BTN5, KC_MS_BTN6, KC_MS_BTN7, KC_MS_BTN8,
+        XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
     ),
 };
 
@@ -172,7 +170,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _NUM, _SYM, _FUNCZ);
+    state = update_tri_layer_state(state, _NUM, _SYM, _ADJUST);
 
     switch (get_highest_layer(state)) {
         case _NAV:
@@ -193,11 +191,18 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case _GAME:
         rgblight_mode_noeeprom(base_mode);
         rgblight_setrgb(255, 215, 57); //avato yellow
-
+        
+        if (previous_state != _GAME) {
         register_code(KC_LGUI);
         register_code(KC_SPACE);
         unregister_code(KC_LGUI);
         unregister_code(KC_SPACE);
+    }
+        break;
+
+        case _ADJUST:
+        rgblight_mode_noeeprom(lock_mode);
+        rgblight_sethsv_noeeprom(HSV_GREEN);
         break;
 
         default:
@@ -205,6 +210,12 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         if (!host_keyboard_led_state().caps_lock) {
                 rgblight_sethsv_noeeprom(HSV_RED);
             }
+        if (previous_state == _GAME) {
+        register_code(KC_LGUI);
+        register_code(KC_SPACE);
+        unregister_code(KC_LGUI);
+        unregister_code(KC_SPACE);
+    }
         break;
 }
     previous_state = get_highest_layer(state);
@@ -212,19 +223,35 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 void matrix_scan_user(void) {
-
     static bool caps_lock_state = false;
+    static bool shift_state = false;
+    
     bool new_caps_lock_state = host_keyboard_led_state().caps_lock;
+    bool new_shift_state = keyboard_report->mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
+
 
     if (caps_lock_state != new_caps_lock_state) {
         caps_lock_state = new_caps_lock_state;
-
         if (caps_lock_state) {
             rgblight_mode_noeeprom(base_mode);
             rgblight_sethsv_noeeprom(HSV_BLUE);
         } else {
             rgblight_mode_noeeprom(base_mode);
             rgblight_sethsv_noeeprom(HSV_RED);
+        }
+    }
+
+    if (shift_state != new_shift_state) {
+        shift_state = new_shift_state;
+        if (shift_state) {
+            rgblight_mode_noeeprom(base_mode);
+            rgblight_sethsv_noeeprom(HSV_BLUE);
+        } else {
+
+            if (!caps_lock_state) {
+                rgblight_mode_noeeprom(base_mode);
+                rgblight_sethsv_noeeprom(HSV_RED);
+            }
         }
     }
 }
