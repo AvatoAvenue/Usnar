@@ -75,6 +75,13 @@ combo_t key_combos[NUM_COMBOS] = {
     [COMBO_JK_DEL] = COMBO(combo_jk, KC_DELETE)
 };
 
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    if (get_highest_layer(layer_state) == _GAME) {
+        return false;
+    }
+    return true;
+}
+
 //LAYERS
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
@@ -135,8 +142,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     ),
 };
 
-static layer_state_t previous_state = 0;
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case COLEMAK:
@@ -188,106 +193,79 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+void set_rgb_color(layer_state_t state) {
+    uint8_t active_layer = get_highest_layer(state);
+
+    switch (active_layer) {
+        case _NAV:
+            rgblight_mode_noeeprom(base_mode);
+            rgblight_sethsv_noeeprom(HSV_CYAN); // Cyan
+            break;
+        case _SYM:
+            rgblight_mode_noeeprom(base_mode);
+            rgblight_sethsv_noeeprom(HSV_PURPLE); // Púrpura
+            break;
+        case _NUM:
+            rgblight_mode_noeeprom(base_mode);
+            rgblight_sethsv_noeeprom(HSV_GOLD); // Dorado
+            break;
+        case _GAME:
+            rgblight_mode_noeeprom(base_mode);
+            rgblight_setrgb(255, 215, 57); // Amarillo Avato
+            break;
+        case _ADJUST:
+            rgblight_mode_noeeprom(lock_mode);
+            rgblight_sethsv_noeeprom(HSV_GREEN); // Verde
+            break;
+        default:
+            rgblight_mode_noeeprom(base_mode);
+            if (!host_keyboard_led_state().caps_lock) {
+                rgblight_sethsv_noeeprom(HSV_RED);
+            }
+            break;
+    }
+}
+
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _NUM, _SYM, _ADJUST);
 
     if ((state & (1UL << _NUM)) && (state & (1UL << _NAV))) {
-        if (!(state & (1UL << _GAME))) {
-            state |= (1UL << _GAME);
-        } else {
-            state &= ~(1UL << _GAME);
-        }
+        state ^= (1UL << _GAME);
     }
 
-    switch (get_highest_layer(state)) {
-        case _NAV:
-        rgblight_mode_noeeprom(base_mode);
-        rgblight_sethsv_noeeprom(HSV_CYAN); //cyan
-        break;
+    static bool game_layer_active    = false;
+    bool        new_game_layer_state = layer_state_cmp(state, _GAME);
 
-        case _SYM:
-        rgblight_mode_noeeprom(base_mode);
-        rgblight_sethsv_noeeprom(HSV_PURPLE); //purple
-        break;
-
-        case _NUM:
-        rgblight_mode_noeeprom(base_mode);
-        rgblight_sethsv_noeeprom(HSV_GOLD); //gold
-        break;
-
-        case _GAME:
-        rgblight_mode_noeeprom(base_mode);
-        rgblight_setrgb(255, 215, 57); //avato yellow
-        
-        if (previous_state != _GAME) {
-        register_code(KC_LGUI);
-        register_code(KC_SPACE);
-        unregister_code(KC_LGUI);
-        unregister_code(KC_SPACE);
+    if (game_layer_active != new_game_layer_state) {
+        game_layer_active = new_game_layer_state;
+        tap_code16(LGUI(KC_SPACE));
     }
-        break;
 
-        case _ADJUST:
-        rgblight_mode_noeeprom(lock_mode);
-        rgblight_sethsv_noeeprom(HSV_GREEN);
-        break;
-
-        default:
-        rgblight_mode_noeeprom(base_mode);
-        if (!host_keyboard_led_state().caps_lock) {
-                rgblight_sethsv_noeeprom(HSV_RED);
-            }
-        if (previous_state == _GAME) {
-        register_code(KC_LGUI);
-        register_code(KC_SPACE);
-        unregister_code(KC_LGUI);
-        unregister_code(KC_SPACE);
-    }
-        break;
-}
-    previous_state = get_highest_layer(state);
+    set_rgb_color(state);
+    
     return state;
-}
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-    if (layer_state_is(_GAME)) {
-        return;
-    }
 }
 
 void matrix_scan_user(void) {
     static bool caps_lock_state = false;
     static bool shift_state = false;
-    
+
     bool new_caps_lock_state = host_keyboard_led_state().caps_lock;
     bool new_shift_state = keyboard_report->mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
 
-
-    if (caps_lock_state != new_caps_lock_state) {
+    if (caps_lock_state != new_caps_lock_state || shift_state != new_shift_state) {
         caps_lock_state = new_caps_lock_state;
-        if (caps_lock_state) {
-            rgblight_mode_noeeprom(base_mode);
-            rgblight_sethsv_noeeprom(HSV_BLUE);
-        } else {
-            rgblight_mode_noeeprom(base_mode);
-            rgblight_sethsv_noeeprom(HSV_RED);
-        }
-    }
-
-    if (shift_state != new_shift_state) {
         shift_state = new_shift_state;
-        if (shift_state) {
+
+        if (caps_lock_state || shift_state) {
             rgblight_mode_noeeprom(base_mode);
             rgblight_sethsv_noeeprom(HSV_BLUE);
         } else {
-
-            if (!caps_lock_state) {
-                rgblight_mode_noeeprom(base_mode);
-                rgblight_sethsv_noeeprom(HSV_RED);
-            }
+            set_rgb_color(layer_state); 
         }
     }
 }
+
 
 void keyboard_post_init_user(void) {
   rgblight_enable_noeeprom();
