@@ -75,13 +75,6 @@ combo_t key_combos[NUM_COMBOS] = {
     [COMBO_JK_DEL] = COMBO(combo_jk, KC_DELETE)
 };
 
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
-    if (get_highest_layer(layer_state) == _GAME) {
-        return false;
-    }
-    return true;
-}
-
 //LAYERS
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
@@ -239,6 +232,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     if (game_layer_active != new_game_layer_state) {
         game_layer_active = new_game_layer_state;
         tap_code16(LGUI(KC_SPACE));
+        combo_toggle();            
     }
 
     set_rgb_color(state);
@@ -252,7 +246,8 @@ void matrix_scan_user(void) {
 
     bool new_caps_lock_state = host_keyboard_led_state().caps_lock;
     bool new_shift_state = keyboard_report->mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
-
+if (get_highest_layer(layer_state) != _GAME)
+{
     if (caps_lock_state != new_caps_lock_state || shift_state != new_shift_state) {
         caps_lock_state = new_caps_lock_state;
         shift_state = new_shift_state;
@@ -264,6 +259,7 @@ void matrix_scan_user(void) {
             set_rgb_color(layer_state); 
         }
     }
+}
 }
 
 
