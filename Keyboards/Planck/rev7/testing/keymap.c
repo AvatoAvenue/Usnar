@@ -82,47 +82,47 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_Q, KC_W, KC_E, KC_R, KC_B, XXXXXXX, XXXXXXX, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_T, XXXXXXX, XXXXXXX, KC_M, KC_J, KC_K, KC_L, KC_SCLN,
         KC_Z, KC_X, KC_C, KC_G, KC_V, XXXXXXX, XXXXXXX, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
-        XXXXXXX, XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
     
     [_QWERTY] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_E, KC_R, KC_T, XXXXXXX, XXXXXXX, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_G, XXXXXXX, XXXXXXX, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
         KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLSH,
-        XXXXXXX, XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
     
     [_COLEMAKDH] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_F, KC_P, KC_B, XXXXXXX, XXXXXXX, KC_J, KC_L, KC_U, KC_Y, KC_SCLN,
         KC_A, KC_R, KC_S, KC_T, KC_G, XXXXXXX, XXXXXXX, KC_M, KC_N, KC_E, KC_I, KC_O,
         KC_Z, KC_X, KC_C, KC_D, KC_V, XXXXXXX, XXXXXXX, KC_K, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
-        XXXXXXX, XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
 
     [_NUM] = LAYOUT_planck_grid(
         KC_P1, KC_P2, KC_P3, KC_P4, KC_P5, XXXXXXX, XXXXXXX, KC_P6, KC_P7, KC_P8, KC_P9, KC_P0,
         KC_0, KC_1, KC_2, KC_3, KC_4, XXXXXXX, XXXXXXX, KC_5, KC_6, KC_7, KC_8, KC_9,
-        KC_MPRV, KC_MNXT, KC_MUTE, KC_MPLY, KC_MPLY, XXXXXXX, XXXXXXX, KC_NUM, KC_CAPS, KC_TAB, KC_ESC, KC_ENT,
-        XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
+        KC_MPRV, KC_MNXT, KC_MUTE, KC_MPLY, KC_VOLD, XXXXXXX, XXXXXXX, KC_VOLU, KC_NUM, KC_TAB, KC_ESC, KC_ENT,
+        XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
 
     [_NAV] = LAYOUT_planck_grid(
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, XXXXXXX, XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
         KC_HOME, KC_PGUP, KC_PGDN, KC_END, KC_F11, XXXXXXX, XXXXXXX, KC_F12, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
         KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, KC_MEH, XXXXXXX, XXXXXXX, KC_MEH, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
-        XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
 
     [_SYM] = LAYOUT_planck_grid(
         KC_DLR, KC_AMPR, KC_PERC, KC_AT, KC_PIPE, XXXXXXX, XXXXXXX, KC_SLSH, KC_QUOT, KC_DQUO, KC_GRV, KCC_Dash,
         KC_ASTR, KC_MINS, KC_PLUS, KC_EQL, KC_LBRC, XXXXXXX, XXXXXXX, KC_RBRC, KC_LPRN, KC_RPRN, KC_EXLM, KC_QUES,
         KC_TILD, KC_CIRC, KC_BSLS, KC_HASH, KC_LT, XXXXXXX, XXXXXXX, KC_GT, KC_LCBR, KC_RCBR, KCC_InvE, KCC_InvQ,
-        XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
 
     [_GAME] = LAYOUT_planck_grid(
         KC_ESCAPE, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MUTE,
-        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, _______,
+        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC,
         KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_ENT,
         KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_SPACE, KC_B, KC_N, KC_M, KC_COMMA, KC_DOT, TG(_GAME)
     ),
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         _______, _______, _______, _______, KC_PWR, XXXXXXX, XXXXXXX, QK_BOOT, KC_DELETE, _______, _______, _______,
         KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, COLEMAKDH, XXXXXXX, XXXXXXX, COLEMAK, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_L,
         KC_BTN4, KC_BTN3, KC_BTN2, KC_BTN1, TG(_ADJUST), XXXXXXX, XXXXXXX, QWERTY, KC_MS_BTN5, KC_MS_BTN6, KC_MS_BTN7, KC_MS_BTN8,
-        XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
 };
 
@@ -192,7 +192,7 @@ void set_rgb_color(layer_state_t state) {
     switch (active_layer) {
         case _NAV:
             rgblight_mode_noeeprom(base_mode);
-            rgblight_sethsv_noeeprom(HSV_CYAN); // Cyan
+            rgblight_sethsv_noeeprom(HSV_GREEN); //green
             break;
         case _SYM:
             rgblight_mode_noeeprom(base_mode);
@@ -208,7 +208,7 @@ void set_rgb_color(layer_state_t state) {
             break;
         case _ADJUST:
             rgblight_mode_noeeprom(lock_mode);
-            rgblight_sethsv_noeeprom(HSV_GREEN); // Verde
+            rgblight_sethsv_noeeprom(HSV_CHARTREUSE); // Verde
             break;
         default:
             rgblight_mode_noeeprom(base_mode);

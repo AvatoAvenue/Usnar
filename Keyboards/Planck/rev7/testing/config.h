@@ -15,10 +15,12 @@
     #define STARTUP_SONG SONG(Castle_Vein_ultrakill)
 #endif
 
+#define DEBOUNCE 2
+
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_MUST_TAP_PER_COMBO
 #define COMBO_COUNT 4
-#define COMBO_TERM 30
+#define COMBO_TERM 20
 
 #define RGBLIGHT_HUE_STEP 10
 #define RGBLIGHT_SAT_STEP 17
