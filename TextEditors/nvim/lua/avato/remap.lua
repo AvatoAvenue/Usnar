@@ -1,6 +1,12 @@
 -- [[ keymaps ]]
 -- ':help vim.keymap.set()'
 
+--Colemakdh problems...
+vim.keymap.set({'n', 'v'}, '<Up>', 'k', { noremap = true })
+vim.keymap.set({'n', 'v'}, '<Down>', 'j', { noremap = true })
+vim.keymap.set({'n', 'v'}, '<Left>', 'h', { noremap = true })
+vim.keymap.set({'n', 'v'}, '<Right>', 'l', { noremap = true })
+
 -- key leader
 vim.g.mapleader = " "
 
