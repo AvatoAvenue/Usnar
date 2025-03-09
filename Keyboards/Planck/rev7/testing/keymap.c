@@ -9,7 +9,6 @@
     uint32_t lock_mode = RGBLIGHT_MODE_BREATHING + 3;
 #endif
 
-
 enum planck_layers {
     _COLEMAK,
     _QWERTY,
@@ -56,23 +55,45 @@ void suspend_wakeup_init_user(void) {
 #endif
 
 enum combos {
-    COMBO_JKL_ENTER,
-    COMBO_SDF_ESC,
-    COMBO_DF_TAB,
-    COMBO_JK_DEL,
+    COMBO_LESC,
+    COMBO_RENTER,
+    COMBO_RBSPC,
+    COMBO_DELETE,
+    COMBO_LQ,
+    COMBO_RP,
+    COMBO_LALT,
+    COMBO_LGALT,
+    COMBO_RALT,
+    COMBO_RGALT,
     NUM_COMBOS
 };
 
-const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM combo_jkl[] = {KC_J, KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM combo_sdf[] = {KC_S, KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM combo_sd[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM combo_kl[] = {KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM combo_as[] = {KC_A, KC_S, COMBO_END};
+const uint16_t PROGMEM combo_lscn[] = {KC_L, KC_SCLN, COMBO_END};
+
+const uint16_t PROGMEM combo_zx[] = {KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_xc[] = {KC_X, KC_C, COMBO_END};
+
+const uint16_t PROGMEM combo_slshdot[] = {KC_SLSH, KC_DOT, COMBO_END};
+const uint16_t PROGMEM combo_dotcomm[] = {KC_DOT, KC_COMMA, COMBO_END};
+
+const uint16_t tabctrl = LCTL_T(KC_TAB);
 
 combo_t key_combos[NUM_COMBOS] = {
-    [COMBO_JKL_ENTER] = COMBO(combo_jkl, KC_ENT),
-    [COMBO_SDF_ESC] = COMBO(combo_sdf, KC_ESC),
-    [COMBO_DF_TAB] = COMBO(combo_df, KC_TAB),
-    [COMBO_JK_DEL] = COMBO(combo_jk, KC_DELETE)
+    [COMBO_LESC] = COMBO(combo_df, KC_ESC),
+    [COMBO_RENTER] = COMBO(combo_jk, KC_ENTER),
+    [COMBO_RBSPC] = COMBO(combo_sd, KC_BSPC),
+    [COMBO_DELETE] = COMBO(combo_kl, KC_DELETE),
+    [COMBO_LQ] = COMBO(combo_as, KC_Q),
+    [COMBO_RP] = COMBO(combo_lscn, KC_P),
+    [COMBO_LALT] = COMBO(combo_zx, KC_LALT),
+    [COMBO_LGALT] = COMBO(combo_xc, KC_RALT),
+    [COMBO_RALT] = COMBO(combo_slshdot, KC_LALT),
+    [COMBO_RGALT] = COMBO(combo_dotcomm, KC_RALT)
 };
 
 //LAYERS
@@ -82,21 +103,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_Q, KC_W, KC_E, KC_R, KC_B, XXXXXXX, XXXXXXX, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_T, XXXXXXX, XXXXXXX, KC_M, KC_J, KC_K, KC_L, KC_SCLN,
         KC_Z, KC_X, KC_C, KC_G, KC_V, XXXXXXX, XXXXXXX, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
-        XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, MO(_NUM), tabctrl, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
-    
+
     [_QWERTY] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_E, KC_R, KC_T, XXXXXXX, XXXXXXX, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_G, XXXXXXX, XXXXXXX, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
         KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLSH,
-        XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, MO(_NUM), tabctrl, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
-    
+
     [_COLEMAKDH] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_F, KC_P, KC_B, XXXXXXX, XXXXXXX, KC_J, KC_L, KC_U, KC_Y, KC_SCLN,
         KC_A, KC_R, KC_S, KC_T, KC_G, XXXXXXX, XXXXXXX, KC_M, KC_N, KC_E, KC_I, KC_O,
         KC_Z, KC_X, KC_C, KC_D, KC_V, XXXXXXX, XXXXXXX, KC_K, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
-        XXXXXXX, XXXXXXX, MO(_NUM), KC_BSPC, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
+        XXXXXXX, XXXXXXX, MO(_NUM), tabctrl, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
 
     [_NUM] = LAYOUT_planck_grid(
@@ -232,11 +253,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     if (game_layer_active != new_game_layer_state) {
         game_layer_active = new_game_layer_state;
         tap_code16(LGUI(KC_SPACE));
-        combo_toggle();            
+        combo_toggle();
     }
 
     set_rgb_color(state);
-    
+
     return state;
 }
 
@@ -245,26 +266,25 @@ void matrix_scan_user(void) {
     static bool shift_state = false;
 
     bool new_caps_lock_state = host_keyboard_led_state().caps_lock;
-    bool new_shift_state = keyboard_report->mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
-if (get_highest_layer(layer_state) != _GAME)
-{
-    if (caps_lock_state != new_caps_lock_state || shift_state != new_shift_state) {
-        caps_lock_state = new_caps_lock_state;
-        shift_state = new_shift_state;
-
-        if (caps_lock_state || shift_state) {
-            rgblight_mode_noeeprom(base_mode);
-            rgblight_sethsv_noeeprom(HSV_BLUE);
-        } else {
-            set_rgb_color(layer_state); 
+    bool new_shift_state = get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
+    if (get_highest_layer(layer_state) != _GAME)
+        {
+        if (caps_lock_state != new_caps_lock_state || shift_state != new_shift_state) {
+            caps_lock_state = new_caps_lock_state;
+            shift_state = new_shift_state;
+            if (caps_lock_state || shift_state) {
+                rgblight_mode_noeeprom(base_mode);
+                rgblight_sethsv_noeeprom(HSV_BLUE);
+            } else {
+                set_rgb_color(layer_state);
+            }
         }
     }
 }
-}
-
 
 void keyboard_post_init_user(void) {
   rgblight_enable_noeeprom();
   rgblight_sethsv_noeeprom(HSV_RED);
   rgblight_mode_noeeprom(base_mode);
 }
+

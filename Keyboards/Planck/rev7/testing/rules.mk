@@ -1,5 +1,6 @@
 # QMK enabled
 LTO_ENABLE = yes
+DEBOUNCE_TYPE = asym_eager_defer_pk
 
 RGBLIGHT_ENABLE = yes
 RGBLIGHT_DRIVER = ws2812

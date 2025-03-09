@@ -3,6 +3,8 @@
 // dead keys
 #define NO_ACTION_ONESHOT
 
+#define FORCE_NKRO
+
 #define NO_MUSIC_MODE
 
 // #define LAYER_STATE_8BIT
@@ -15,12 +17,14 @@
     #define STARTUP_SONG SONG(Castle_Vein_ultrakill)
 #endif
 
-#define DEBOUNCE 2
+#define QMK_KEYS_PER_SCAN 3
+#define USB_POLLING_INTERVAL_MS 1
+#define DEBOUNCE 10
 
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_MUST_TAP_PER_COMBO
-#define COMBO_COUNT 4
-#define COMBO_TERM 20
+#define COMBO_COUNT 12
+#define COMBO_TERM 15
 
 #define RGBLIGHT_HUE_STEP 10
 #define RGBLIGHT_SAT_STEP 17
