@@ -19,6 +19,7 @@ return {
 				"markdown",
 				"markdown_inline",
 				"html",
+                "kotlin",
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)

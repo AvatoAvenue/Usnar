@@ -18,8 +18,9 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
                 lua = { "stylua" },
-                csharp = { "astyle", "csharpier" },
-                rust = { "rustfmt", lsp_format = "fallback"}
+                csharp = { "csharpier", "ast-grep" },
+                rust = { "rustfmt", lsp_format = "fallback"},
+                kotlin = { "ktlint" }
             },
 		})
 		local cmp = require("cmp")
@@ -38,6 +39,7 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"csharp_ls",
+				"kotlin_language_server",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)

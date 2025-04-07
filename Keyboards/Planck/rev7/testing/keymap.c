@@ -61,10 +61,6 @@ enum combos {
     COMBO_DELETE,
     COMBO_LQ,
     COMBO_RP,
-    COMBO_LALT,
-    COMBO_LGALT,
-    COMBO_RALT,
-    COMBO_RGALT,
     NUM_COMBOS
 };
 
@@ -75,13 +71,11 @@ const uint16_t PROGMEM combo_kl[] = {KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM combo_as[] = {KC_A, KC_S, COMBO_END};
 const uint16_t PROGMEM combo_lscn[] = {KC_L, KC_SCLN, COMBO_END};
 
-const uint16_t PROGMEM combo_zx[] = {KC_Z, KC_X, COMBO_END};
-const uint16_t PROGMEM combo_xc[] = {KC_X, KC_C, COMBO_END};
-
-const uint16_t PROGMEM combo_slshdot[] = {KC_SLSH, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combo_dotcomm[] = {KC_DOT, KC_COMMA, COMBO_END};
-
 const uint16_t tabctrl = LCTL_T(KC_TAB);
+const uint16_t xalt = LALT_T(KC_X);
+const uint16_t zralt = LCA_T(KC_Z);
+const uint16_t dotalt = LALT_T(KC_DOT);
+const uint16_t slshralt = LCA_T(KC_SLSH);
 
 combo_t key_combos[NUM_COMBOS] = {
     [COMBO_LESC] = COMBO(combo_df, KC_ESC),
@@ -89,11 +83,7 @@ combo_t key_combos[NUM_COMBOS] = {
     [COMBO_RBSPC] = COMBO(combo_sd, KC_BSPC),
     [COMBO_DELETE] = COMBO(combo_kl, KC_DELETE),
     [COMBO_LQ] = COMBO(combo_as, KC_Q),
-    [COMBO_RP] = COMBO(combo_lscn, KC_P),
-    [COMBO_LALT] = COMBO(combo_zx, KC_LALT),
-    [COMBO_LGALT] = COMBO(combo_xc, KC_RALT),
-    [COMBO_RALT] = COMBO(combo_slshdot, KC_LALT),
-    [COMBO_RGALT] = COMBO(combo_dotcomm, KC_RALT)
+    [COMBO_RP] = COMBO(combo_lscn, KC_P)
 };
 
 //LAYERS
@@ -102,21 +92,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     [_COLEMAK] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_E, KC_R, KC_B, XXXXXXX, XXXXXXX, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_T, XXXXXXX, XXXXXXX, KC_M, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, KC_X, KC_C, KC_G, KC_V, XXXXXXX, XXXXXXX, KC_N, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
+        zralt, xalt, KC_C, KC_G, KC_V, XXXXXXX, XXXXXXX, KC_N, KC_H, KC_COMMA, dotalt, slshralt,
         XXXXXXX, XXXXXXX, MO(_NUM), tabctrl, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
 
     [_QWERTY] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_E, KC_R, KC_T, XXXXXXX, XXXXXXX, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_G, XXXXXXX, XXXXXXX, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLSH,
+        zralt, xalt, KC_C, KC_V, KC_B, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMMA, dotalt, slshralt,
         XXXXXXX, XXXXXXX, MO(_NUM), tabctrl, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
 
     [_COLEMAKDH] = LAYOUT_planck_grid(
         KC_Q, KC_W, KC_F, KC_P, KC_B, XXXXXXX, XXXXXXX, KC_J, KC_L, KC_U, KC_Y, KC_SCLN,
         KC_A, KC_R, KC_S, KC_T, KC_G, XXXXXXX, XXXXXXX, KC_M, KC_N, KC_E, KC_I, KC_O,
-        KC_Z, KC_X, KC_C, KC_D, KC_V, XXXXXXX, XXXXXXX, KC_K, KC_H, KC_COMMA, KC_DOT, KC_SLSH,
+        zralt, xalt, KC_C, KC_D, KC_V, XXXXXXX, XXXXXXX, KC_K, KC_H, KC_COMMA, dotalt, slshralt,
         XXXXXXX, XXXXXXX, MO(_NUM), tabctrl, KC_SPACE, XXXXXXX, XXXXXXX, KC_LSFT, MO(_NAV), MO(_SYM), XXXXXXX, XXXXXXX
     ),
 
@@ -129,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 
     [_NAV] = LAYOUT_planck_grid(
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, XXXXXXX, XXXXXXX, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-        KC_HOME, KC_PGUP, KC_PGDN, KC_END, KC_F11, XXXXXXX, XXXXXXX, KC_F12, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,
+        KC_F11, KC_HOME, KC_PGUP, KC_PGDN, KC_END,XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_F12, 
         KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, KC_MEH, XXXXXXX, XXXXXXX, KC_MEH, KC_RALT, KC_LALT, KC_LGUI, KC_LCTL,
         XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX
     ),
